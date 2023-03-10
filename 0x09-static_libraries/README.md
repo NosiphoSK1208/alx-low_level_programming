@@ -1,0 +1,1 @@
+Static libraries first readme
