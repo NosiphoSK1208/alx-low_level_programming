@@ -3,14 +3,14 @@
 /**
  * insert_dnodeint_at_index - inserts a node node at a given position
  * in a dlistint_t list.
- * @point_l: pointer to the list.
+ * @p_l: pointer to the list.
  * @ind: position to add the node.
  * @n: data for the new node.
  * Return: the address of the new node, or NULL if it failed
  **/
-dlistint_t *insert_dnodeint_at_index(dlistint_t **point_l, unsigned int ind, int n)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **p_l, unsigned int ind, int n)
 {
-	dlistint_t *auxnode = *point_l, *anode;
+	dlistint_t *auxnode = *p_l, *anode;
 	unsigned int mark, cal = 0;
 
 	/* create node */
@@ -23,11 +23,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **point_l, unsigned int ind, int
 	if (ind == 0)
 	{
 		anode->prev = NULL;
-		anode->next = *point_l;
-		if (*point_l)
-			(*point_l)->prev = anode;
-		*point_l = anode;
-		return (*point_l);
+		anode->next = *p_l;
+		if (*p_l)
+			(*p_l)->prev = anode;
+		*p_l = anode;
+		return (*p_l);
 	}
 
 	/* search of position to insert */
